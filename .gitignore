@@ -1,0 +1,17 @@
+# Nuxt
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+
+# Node
+node_modules
+*.log*
+.DS_Store
+
+# Env（含数据库密码，勿提交）
+.env
+.env.*
+!.env.example

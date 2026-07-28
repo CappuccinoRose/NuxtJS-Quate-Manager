@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7f8f6;
+  --fg: #1c2422;
+  --muted: #5c6b67;
+  --accent: #2a7a6c;
+  --border: #d5ddd9;
+  --surface: #ffffff;
+}
+
+html.dark {
+  --bg: #121816;
+  --fg: #e8eeeb;
+  --muted: #9aaba5;
+  --accent: #5cb8a6;
+  --border: #2a3833;
+  --surface: #1a221f;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-dark dark:bg-accent dark:text-zinc-900 dark:hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply btn border border-[var(--border)] bg-transparent text-[var(--fg)] hover:bg-black/5 dark:hover:bg-white/5;
+  }
+  .btn-danger {
+    @apply btn text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-950/40;
+  }
+  .input {
+    @apply w-full rounded-md border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-sm outline-none ring-accent focus:ring-2;
+  }
+  .label {
+    @apply mb-1 block text-sm text-[var(--muted)];
+  }
+}
